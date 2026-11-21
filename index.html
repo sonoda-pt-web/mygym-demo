@@ -188,7 +188,7 @@
 </head>
 <body>
 
-<div class="demo-bar" role="note"><strong>提案用デモ（非公式）v1</strong>　実在の公式サイトではありません。予約・電話・LINEのボタンは動作しません。料金・店舗情報は2026年11月17日時点の公式サイトをもとにしています。</div>
+<div class="demo-bar" role="note"><strong>提案用デモ（非公式）v1</strong>　このページは MY-GYM 様へのご提案用に作成した見本です。公式サイトではありません。予約・電話・LINEのボタンは動作しません。料金・店舗情報は2026年11月17日時点の公式サイトをもとにしています。</div>
 
 <header class="site">
   <div class="head-in">
@@ -401,7 +401,7 @@
 <footer>
   <div class="wrap">
     <p>熊本パーソナルジム MY-GYM（九品寺店・水前寺店・出水はません店）</p>
-    <p>この画面は Web制作の提案用に作ったデモです。運営会社が公開しているものではありません。</p>
+    <p>このページは MY-GYM 様へのご提案用に作成した見本です。公式サイトではありません。</p>
   </div>
 </footer>
 
@@ -424,16 +424,14 @@
   tg.addEventListener('click',()=>{const on=document.body.classList.toggle('show-notes');tg.setAttribute('aria-pressed',on);tg.textContent=on?'提案ポイントを隠す':'提案ポイントを表示'});
 
   // demo-only contact links
-  document.querySelectorAll('[data-demo]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const d=document.getElementById('done');d.textContent='デモのため、電話・LINEにはつながりません。';d.classList.add('show')}));
+  document.querySelectorAll('[data-demo]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();alert('見本のためリンクしていません')}));
 
   // form (no sending)
   document.querySelector('form.trial').addEventListener('submit',e=>{
     e.preventDefault();
-    const s=document.querySelector('input[name=store]:checked'),d=document.getElementById('d').value,n=document.getElementById('nm').value.trim(),p=document.getElementById('ph').value.trim();
     const err=document.getElementById('err'),done=document.getElementById('done');
-    if(!s||!d||!n||!p){err.classList.add('show');done.classList.remove('show');return}
     err.classList.remove('show');
-    done.textContent=`${s.value}・${d}${document.getElementById('tm').value?'・'+document.getElementById('tm').value:''}で体験の予約を受け付けました（デモのため実際には送信されていません）。`;
+    done.textContent='見本のためリンクしていません';
     done.classList.add('show');
   });
 </script>
